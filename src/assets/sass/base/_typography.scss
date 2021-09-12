@@ -1,0 +1,15 @@
+@font-face
+{
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+  font-family: "Segoe UI", sans-serif,monospace;
+  src: url("../../font/Segoe UI.woff");
+}
+
+h1,h2,h3,h4,h5,h6,p,span,td,div{
+  font-family: "Segoe UI", sans-serif !important;
+}
