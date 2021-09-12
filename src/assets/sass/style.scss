@@ -7,6 +7,67 @@
  * TABLE OF CONTENT
  * ----------------------------------------------
  */
+@keyframes ShowOpacities{
+  0%{
+    opacity: 0;
+    transform:scale(.8)
+  }
+  100%{
+    opacity: 1;
+    transform:scale(1)
+  }
+}
+@keyframes CloseModal{
+  0%{
+    transform:scale(1)
+  }
+  100%{
+    transform:scale(0);
+    display: none;
+  }
+}
+
+
+
+@keyframes cncShow {
+  0%{
+    opacity: 0;
+    bottom:-20px;
+    visibility: hidden;
+  }
+  10%{
+    visibility: visible;
+  }
+  100%{
+    opacity: 1;
+    bottom:10px;
+  }
+}
+@keyframes cncHidden {
+  0%{
+    opacity: 1;
+    bottom:10px;
+    visibility: visible;
+  }
+  90%{
+    visibility: hidden;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+    bottom:-20px;
+  }
+}
+
+.mdd-cnc :not(.mdd-cnc-active){
+  transition:.2s;
+  animation: cncHidden .5s ease-out forwards;
+}
+.mdd-cnc.mdd-cnc-active{
+  transition:.2s;
+  animation:cncShow .5s ease-in forwards;
+
+}
 @tailwind base;
 @tailwind components;
 @tailwind screens;

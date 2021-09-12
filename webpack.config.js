@@ -1,6 +1,9 @@
-const HtmlWebpackPlugin     = require('html-webpack-plugin')
-const path                  = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin     = require('html-webpack-plugin');
+const path                  = require('path');
+const Dotenv                = require('dotenv-webpack');
+const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
+const {InjectManifest}      = require('workbox-webpack-plugin');
+const CopyPlugin            = require('copy-webpack-plugin');
 
 module.exports = {
     context: __dirname,
@@ -51,6 +54,22 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public/index.html'),
             filename: "index.html"
-        })
+        }),
+        new Dotenv({
+            path: './.env',
+            systemvars:true
+        }),
+        new CopyPlugin({
+            patterns:[
+                {from:"./public/manifest.json",to:""},
+                {from:"./public/favicon.ico",to:""},
+                {from:"./public/logo192.png",to:""},
+                {from:"./public/logo512.png",to:""}
+            ]
+        }),
+        new InjectManifest({
+            swSrc: path.resolve(__dirname,"./src/src-sw.js"),
+            swDest: "sw.js",
+        }),
     ]
 }

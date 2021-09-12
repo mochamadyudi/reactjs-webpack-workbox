@@ -1,22 +1,19 @@
 #Reactjs From Scratch
-
 ##Tech Stack
--[x] Webpack
--[x] Workbox
--[x] Redux
--[x] Tailwind
-
-
+- [x] Webpack
+- [x] Workbox
+- [x] Redux
+- [x] Tailwind
 ###Running Apps
 - Development Mode
-``
-npm run dev
-``
+    ```text
+    npm run dev
+    ```
 - Bundle
-    ``
+    ```textmate
     npm run prod
-    ``
+    ```
 - Running & Bundle
-``
-npm run serve
-``
+    ```text
+    npm run serve
+    ```
