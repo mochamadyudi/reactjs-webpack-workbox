@@ -5,9 +5,12 @@ import TheHeaders from "../../component/header/TheHeaders";
 
 const MainWrapper = ({children})=> {
     return(
-        <div className={`min-w-screen min-h-screen`}>
+        <div className={'space-y-6 w-full block'}>
             <TheHeaders/>
-            {children}
+            <div className="block w-full h-screen border max-w-6xl mx-auto">
+                {children}
+            </div>
+
         </div>
     )
 }
